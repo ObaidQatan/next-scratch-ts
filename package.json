@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start:dev": "next dev",
     "db:migrate": "prisma migrate dev --schema=./db/prisma/schema.prisma",
     "db:generate": "prisma generate --schema=./db/prisma/schema.prisma",
     "postinstall": "prisma generate --schema=./db/prisma/schema.prisma",
@@ -47,11 +48,13 @@
     "tabler-icons-react": "^1.56.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/lodash": "^4.14.185",
     "@types/node": "18.7.1",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.8",
+    "concurrently": "^7.6.0",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.5",
     "postcss": "^8.4.16",

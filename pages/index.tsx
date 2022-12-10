@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
+import Card from "../src/components/common/Card";
 
 const Home: NextPage = () => {
-  return <main className="flex-col items-center">Hello World</main>;
+  return (
+    <Card className="rounded-none border-none shadow-none">Hello World</Card>
+  );
 };
 
 export default Home;

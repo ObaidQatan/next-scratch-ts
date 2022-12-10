@@ -23,6 +23,7 @@ model Customer {
   username          String     @unique
   password          String
   balance           Float      @default(0)
+  accountNumber     String     @unique
   sentTransfers     Transfer[] @relation("from")
   receivedTransfers Transfer[] @relation("to")
   role              Role       @default(USER)

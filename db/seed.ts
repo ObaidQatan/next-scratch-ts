@@ -31,6 +31,7 @@ const generateCustomers = () => {
       balance: parseFloat((Math.random() * 4000 + 1000).toFixed(2)),
       role: "USER",
       username: `cus${i}`,
+      accountNumber: `123456789${i}`,
     });
   }
 

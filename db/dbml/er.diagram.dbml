@@ -14,6 +14,7 @@ Table Customer {
   username String [unique, not null]
   password String [not null]
   balance Float [not null, default: 0]
+  accountNumber String [unique, not null]
   sentTransfers Transfer [not null]
   receivedTransfers Transfer [not null]
   role Role [not null, default: 'USER']
