@@ -1,9 +1,15 @@
 {
-  "name": "jobify",
+  "name": "bankify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "db:migrate": "prisma migrate dev --schema=./db/prisma/schema.prisma",
+    "db:generate": "prisma generate --schema=./db/prisma/schema.prisma",
+    "postinstall": "prisma generate --schema=./db/prisma/schema.prisma",
+    "db:push": "prisma db push --schema=./db/prisma/schema.prisma",
+    "db:seed": "ts-node db/seed.ts",
+    "db:studio": "prisma studio --schema=./db/prisma/schema.prisma",
+    "dev": "concurrently \"npm:start:dev\" \"npm:db:generate\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,15 +27,23 @@
     "@mantine/notifications": "^5.1.5",
     "@mantine/nprogress": "^5.1.5",
     "@mantine/prism": "^5.1.5",
+    "@prisma/client": "^4.7.1",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.1",
+    "framer-motion": "^7.6.19",
     "lodash": "^4.17.21",
     "next": "12.2.5",
     "next-translate": "^1.5.0",
     "nextjs-progressbar": "^0.0.14",
+    "prisma": "^4.7.1",
+    "prisma-dbml-generator": "^0.10.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "stylis-plugin-rtl": "^2.1.1"
+    "react-hot-toast": "^2.4.0",
+    "react-spinners": "^0.13.7",
+    "recoil": "^0.7.6",
+    "stylis-plugin-rtl": "^2.1.1",
+    "tabler-icons-react": "^1.56.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.185",
